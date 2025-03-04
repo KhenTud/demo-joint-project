@@ -15,10 +15,10 @@ class Dashboard extends Component
 
         //
         if ($requestProjectId) { //cek kondisi apakah ada $ruequestProjectId, ambil single data
-            $this->project = Project::with(['user'])->where('id', $requestProjectId)->first(); //mengambil id dari modal Project dan masukkan ke $project
+            $this->project = Project::with(['user', 'teams'])->where('id', $requestProjectId)->first(); //mengambil id dari modal Project dan masukkan ke $project
 
         } else {
-            $this->listProject = Project::with(['user'])->get(); // dalam kondisi false, mengambil semua data dan memasukkannya ke dalam listProjects
+            $this->listProject = Project::with(['user', 'teams'])->get(); // dalam kondisi false, mengambil semua data dan memasukkannya ke dalam listProjects
 
         }
     }
