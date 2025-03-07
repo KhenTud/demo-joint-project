@@ -49,7 +49,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
-    public function team()
+    public function teams()
     {
         return $this->belongsTo(Team::class);
     }

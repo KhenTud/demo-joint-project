@@ -41,6 +41,16 @@ new class extends Component {
                                 {{ __('Projects') }}
                             </x-responsive-nav-link>
                         </div>
+                        <div class="pt-2 pb-3 space-y-1">
+                            <x-responsive-nav-link :href="route('posts')" :active="request()->routeIs('posts')" wire:navigate>
+                                {{ __('Posts') }}
+                            </x-responsive-nav-link>
+                        </div>
+                        <div class="pt-2 pb-3 space-y-1">
+                            <x-responsive-nav-link :href="route('todo')" :active="request()->routeIs('todo')" wire:navigate>
+                                {{ __('Todo') }}
+                            </x-responsive-nav-link>
+                        </div>
                     @elseif (Auth::user()->role == 'user')
                         <div class="pt-2 pb-3 space-y-1">
                             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')" wire:navigate>

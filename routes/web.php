@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\TodoListController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +31,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::view('admin-dashboard', 'admin-dashboard', ['pageTitle' => 'admin-dashboard'])->name('admin-dashbaord');
     Route::get('/admin-project', [ProjectController::class, 'project'])->name("admin-project");
     Route::get('/admin-dashboard', [ProjectController::class, 'index'])->name("admin-dashboard");
+    Route::get('/posts', [PostController::class,'index'])->name("posts");
+    Route::get('/todo', [TodoListController::class,'index'])->name("todo");
 
     // Route untuk User
 
