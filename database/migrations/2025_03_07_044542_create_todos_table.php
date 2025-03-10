@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('status');
             $table->foreignIdFor(Project::class);
-            $table->integer('category');
+            $table->string('category');
             $table->timestamps();
         });
     }

@@ -14,4 +14,8 @@ class Todo extends Model
         'project_id',
         'category'
     ];
+    public function project()
+    {
+        return $this->belongsTo(Project::class);
+    }
 }
